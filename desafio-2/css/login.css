@@ -1,0 +1,81 @@
+body {
+
+    background-image: url(../img/pexels-hong-son-3972215.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.justify-center{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+form {
+
+    background-color: #ffffff90 ;
+    max-width: 400px;
+    width: 70%;
+    padding: 5%;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 3px 3px 1px 0 #00000080;
+}
+
+form h3 {
+
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+form input[type=text],
+form input[type=password] {
+
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 5px;
+    display: inline-block;
+    
+}
+
+form input[type=button] {
+
+    background-color: rgb(226, 81, 81);
+    width: 20%;
+    border-radius: 20px;
+    border: 0;
+    transition: 1s;
+    cursor: pointer ;
+    padding: 10px;
+    
+    
+
+}
+
+form input[type=button]:hover {
+
+    background-color: rgba(236, 113, 113, 0.637);
+
+}
+
+form a {
+
+    font-size: 10px;
+    font-style: normal;
+    text-decoration: solid;
+    color: #000;
+    text-align: center;
+}
+

@@ -1,0 +1,87 @@
+
+body {
+
+    background-image: url(/img/pexels-rocsana-nicoleta-gurza-948185.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.justify-center{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+form {
+
+    background-color: #ffffff90 ;
+    max-width: 600px;
+    width: 70%;
+    padding: 5%;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 3px 3px 1px 0 #00000080;
+}
+
+form h3 {
+
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+form input[type=text],
+form input[type=email],
+form input[type=password]{
+
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 5px;
+    display: inline-block;
+    outline: none;
+    font-size: 16px;
+    
+}
+
+form label{
+
+    font-size: 13px;
+    display:block;
+}
+
+form input[type=submit] {
+
+    background-color: rgb(226, 81, 81);
+    width: 30%;
+    border-radius: 20px;
+    border: 0;
+    transition: 1s;
+    cursor: pointer ;
+    padding: 10px;
+    
+}
+
+form input[type=button]:hover {
+
+    background-color: rgba(236, 113, 113, 0.637);
+
+}
+
+.error-validation{
+
+    color: red;
+    position: absolute;
+    top: 57px;
+    font-size: 10px;
+}

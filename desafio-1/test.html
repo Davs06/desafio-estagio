@@ -1,0 +1,84 @@
+<template-selector class="ng-isolate-scope">
+    <div id="template-selector" class="panel panel-body text-center panel-background-colored">
+        <h3>2. Choose signature template</h3>
+        <div id="template-selector-images" class="slick-container visible-lg">
+            <!-- <slick infinite=false slides-to-show=4 slides-to-scroll=1 responsive="[{breakpoint: 1200,settings: {slidesToShow: 3}}, {breakpoint: 1000,settings: {slidesToShow: 2}},{breakpoint:
+		800,settings: {slidesToShow: 1}} ]">			
+		 -->
+            <slick infinite="false" slides-to-show="4" slides-to-scroll="4"
+                class="ng-isolate-scope slick-initialized slick-slider"><img
+                    class="a-left control-c prev slick-prev slick-arrow slick-disabled" src="img/arrow-left.png"
+                    aria-disabled="true" style="">
+                <!-- ngRepeat: template in $ctrl.signatureTemplates -->
+                <div aria-live="polite" class="slick-list draggable">
+                    <div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);"
+                        role="listbox">
+                        <div class="template-item ng-scope slick-slide slick-current slick-active"
+                            ng-repeat="template in $ctrl.signatureTemplates" data-slick-index="0" aria-hidden="false"
+                            style="width: 0px;" tabindex="-1" role="option">
+                            <a href="#/compact-design" tabindex="0">
+                                <picture>
+                                    <source class="template-item-img active" ng-class="{'active': template.active}"
+                                        ng-srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/compact-design.webp"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)" type="image/webp"
+                                        srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/compact-design.webp">
+                                    <img class="template-item-img active" ng-class="{'active': template.active}"
+                                        ng-src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/compact-design.png"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)"
+                                        src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/compact-design.png">
+                                </picture>
+                            </a>
+                        </div>
+                        <div class="template-item ng-scope slick-slide slick-active"
+                            ng-repeat="template in $ctrl.signatureTemplates" data-slick-index="1" aria-hidden="false"
+                            style="width: 0px;" tabindex="-1" role="option">
+                            <a href="#/top-security" tabindex="0">
+                                <picture>
+                                    <source class="template-item-img" ng-class="{'active': template.active}"
+                                        ng-srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/top-security.webp"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)" type="image/webp"
+                                        srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/top-security.webp">
+                                    <img class="template-item-img" ng-class="{'active': template.active}"
+                                        ng-src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/top-security.png"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)"
+                                        src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/top-security.png">
+                                </picture>
+                            </a>
+                        </div>
+                        <div class="template-item ng-scope slick-slide slick-active"
+                            ng-repeat="template in $ctrl.signatureTemplates" data-slick-index="2" aria-hidden="false"
+                            style="width: 0px;" tabindex="-1" role="option">
+                            <a href="#/vertical-style" tabindex="0">
+                                <picture>
+                                    <source class="template-item-img" ng-class="{'active': template.active}"
+                                        ng-srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/vertical-style.webp"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)" type="image/webp"
+                                        srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/vertical-style.webp">
+                                    <img class="template-item-img" ng-class="{'active': template.active}"
+                                        ng-src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/vertical-style.png"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)"
+                                        src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/vertical-style.png">
+                                </picture>
+                            </a>
+                        </div>
+                        <div class="template-item ng-scope slick-slide slick-active"
+                            ng-repeat="template in $ctrl.signatureTemplates" data-slick-index="3" aria-hidden="false"
+                            style="width: 0px;" tabindex="-1" role="option">
+                            <a href="#/tasty-banner" tabindex="0">
+                                <picture>
+                                    <source class="template-item-img" ng-class="{'active': template.active}"
+                                        ng-srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/tasty-banner.webp"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)" type="image/webp"
+                                        srcset="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/tasty-banner.webp">
+                                    <img class="template-item-img" ng-class="{'active': template.active}"
+                                        ng-src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/tasty-banner.png"
+                                        ng-click="$ctrl.setActiveTemplate(template.name)"
+                                        src="https://www.mail-signatures.com/signature-generator/img/templates/thumbnail/tasty-banner.png">
+                                </picture>
+                            </a>
+
+
+
+                            <a href="/signature-templates/" target="_blank"><small>More templates</small></a>
+                        </div>
+</template-selector>
