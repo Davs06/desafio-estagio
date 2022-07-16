@@ -1,150 +1,113 @@
-class Validator {
+// let form = document.getElementById("form")
+// let submit = document.getElementById("acao")
 
-    constructor() {
-        this.validations = [
 
-        ]
+
+// function checkInputs() {
+    
+//     let nomeValue = nome.value.trim()
+//     let emailValue = email.value.trim()
+//     let senhaValue = senha.value.trim()
+//     let confirmValue = confirmSenha.value.trim()
+    
+//     if (nomeValue === '') {
+
+//         erroValidation(nome, 'preencha esse campo')
+
+//     } else {
+
+
+
+//     }
+// }
+
+// function erroValidation(input, message) {
+
+//     let formControl = input.parentElement
+
+//     form.control.className = 'form erro'
+// }
+
+
+// let form = document.querySelector('submit', (e) => {
+
+//     e.preventDefault()
+
+//     for (i = 0; i < this.element.length; i++) {
+//         let item = this.element[i]
+
+//         if (item.type !== "submit") {
+//             if (item.value == "") {
+
+//                 item.classList.add("error")
+//             }
+//         }
+//     }
+// })
+
+
+let nome = document.querySelector('#nome')
+let email = document.querySelector('#email')
+let senha = document.querySelector('#senha')
+let confirmSenha = document.querySelector('#confirmSenha')
+let labelQuant = document.querySelector('#labelQuant')
+let labelMaiusc = document.querySelector('#labelMaiusc')
+let labelMinusc = document.querySelector('#labelMinusc')
+let labelNumb = document.querySelector('#labelNumb')
+let labelEspecial = document.querySelector('#labelEspecial')
+
+
+
+let btn = document.querySelector('#acao').addEventListener('click', () => {
+
+     alert('botao clicado ')
+
+} )
+
+
+
+nome.addEventListener('keyup', () => {
+
+
+
+    if (nome.value.length <= 3) {
+
+        nome.setAttribute('style', 'border-color: red')
+
+    } else {
+
+        nome.setAttribute('style', 'border-color: #ccc')
+
+
     }
-
-    //iniciando validação
-    validate(form){
-
-        // pegar inputs
-        let inputs = form.getElementsByTagName('input')
-        console.log(inputs);
-
-        let inputsArray = [...inputs]
-        console.log(inputsArray);
-
-        inputsArray.forEach(function(input){
-            console.log(input);
-        })
-
-    }
-}
-
-
-let form = document.getElementById("form")
-let submit = document.getElementById("acao")
-
-let validator = new Validator()
-
-
-// let nome = document.querySelector('#nome')
-// let email = document.querySelector('#email')
-// let senha = document.querySelector('#senha')
-// let confirmSenha = document.querySelector('#confirmSenha')
-// let labelQuant = document.querySelector('#labelQuant')
-// let labelMaiusc = document.querySelector('#labelMaiusc')
-// let labelMinusc = document.querySelector('#labelMinusc')
-// let labelNumb = document.querySelector('#labelNumb')
-// let labelEspecial = document.querySelector('#labelEspecial')
-
-//evento para disparar validações 
-submit.addEventListener('click', function(e) {
-
-    e.preventDefault()
-     
-    validator.validate(form)
-
 })
 
-// nome.addEventListener('keyup',() => {
-
-//      if(nome.value.length <= 2){
-
-//         nome.setAttribute('style', 'border-color: red')
-
-//      }else{
-
-//         nome.setAttribute('style', 'border-color: #ccc')
+senha.addEventListener('keyup', () => {
 
 
-//      }
-// })
+    if (senha.value.length <= 7) {
 
-// senha.addEventListener('keyup',()=>{
+        labelQuant.setAttribute('style', 'color: red')
 
-//     if(senha.value.length <= 7){
+    } else {
 
-//        labelQuant.setAttribute('style', 'color: red')
+        labelQuant.setAttribute('style', 'color: black')
 
-//     }else{
+    }
+})
 
-//         labelQuant.setAttribute('style', 'color: black')
-
-
-//     }
-// })
-// senha.addEventListener('keyup',()=>{
-
-//     if(senha.value.length <= 7){
-
-//        labelQuant.setAttribute('style', 'color: red')
-
-//     }else{
-
-//         labelQuant.setAttribute('style', 'color: black')
-
-
-//     }
-// })
-// senha.addEventListener('keyup',()=>{
-
-//     if(senha.value.length <= 7){
-
-//        labelQuant.setAttribute('style', 'color: red')
-
-//     }else{
-
-//         labelQuant.setAttribute('style', 'color: black')
-
-
-//     }
-// })
-// senha.addEventListener('keyup',()=>{
-
-//     if(senha.value.length <= 7){
-
-//        labelQuant.setAttribute('style', 'color: red')
-
-//     }else{
-
-//         labelQuant.setAttribute('style', 'color: black')
-
-
-//     }
-// })
-// senha.addEventListener('keyup',()=>{
-
-//     if(senha.value.length <= 7){
-
-//        labelQuant.setAttribute('style', 'color: red')
-
-//     }else{
-
-//         labelQuant.setAttribute('style', 'color: black')
-
-
-//     }
-// })
-
-// confirmSenha.addEventListener('keyup',()=>{
-
-//     if(confirmSenha.value == senha){
-
-//        confirmSenha.setAttribute('style', 'border-color: red')
-
-//     }else{
-
-//         confirmSenha.setAttribute('style', 'color: black')
-
-
-//     }
-// })
+confirmSenha.addEventListener('keyup', () => {
 
 
 
-// function cadastrar(){
-    
-// }
+    if (senha.value === confirmSenha.value) {
+
+        confirmSenha.setAttribute('style', 'border-color: grenn')
+
+    } else {
+
+        confirmSenha.setAttribute('style', 'border-color: red')
+
+
+    }
+})
