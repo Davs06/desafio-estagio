@@ -78,10 +78,3 @@ form button:hover {
 
 }
 
-.error-validation{
-
-    color: red;
-    position: absolute;
-    top: 57px;
-    font-size: 10px;
-}

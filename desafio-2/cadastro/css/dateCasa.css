@@ -75,11 +75,3 @@ label{
     font-size: 10px;
     margin-bottom: 5PX;
 }
-
-.error-validation {
-
-    color: red;
-    position: absolute;
-    top: 57px;
-    font-size: 10px;
-}

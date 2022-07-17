@@ -1,55 +1,14 @@
-// let form = document.getElementById("form")
-// let submit = document.getElementById("acao")
-
-
-
-// function checkInputs() {
-    
-//     let nomeValue = nome.value.trim()
-//     let emailValue = email.value.trim()
-//     let senhaValue = senha.value.trim()
-//     let confirmValue = confirmSenha.value.trim()
-    
-//     if (nomeValue === '') {
-
-//         erroValidation(nome, 'preencha esse campo')
-
-//     } else {
-
-
-
-//     }
-// }
-
-// function erroValidation(input, message) {
-
-//     let formControl = input.parentElement
-
-//     form.control.className = 'form erro'
-// }
-
-
-// let form = document.querySelector('submit', (e) => {
-
-//     e.preventDefault()
-
-//     for (i = 0; i < this.element.length; i++) {
-//         let item = this.element[i]
-
-//         if (item.type !== "submit") {
-//             if (item.value == "") {
-
-//                 item.classList.add("error")
-//             }
-//         }
-//     }
-// })
-
-
 let nome = document.querySelector('#nome')
 let email = document.querySelector('#email')
 let senha = document.querySelector('#senha')
 let confirmSenha = document.querySelector('#confirmSenha')
+
+let validNome = true
+let validEmail = true
+let validSenha = true
+let validConfimSenha = true
+
+
 let labelQuant = document.querySelector('#labelQuant')
 let labelMaiusc = document.querySelector('#labelMaiusc')
 let labelMinusc = document.querySelector('#labelMinusc')
@@ -58,56 +17,88 @@ let labelEspecial = document.querySelector('#labelEspecial')
 
 
 
-let btn = document.querySelector('#acao').addEventListener('click', () => {
+let btn = document.querySelector('#acao').addEventListener('click', (e) => {
 
-     alert('botao clicado ')
+    e.preventDefault()
 
-} )
+    if (validNome && /*validEmail &&*/ validSenha && validConfimSenha) {
+
+        let listData = JSON.parse(localStorage.getItem('listData') || '[]')
+
+        listData.push({
+
+            nome: nome.value,
+            email: email.value,
+            senha: senha.value
+        })
+
+        localStorage.setItem('listData', JSON.stringify(listData))
+
+        // alert('proxima pag')
+        window.location.href = '///home/davs/workspace/desafio-estagio/desafio-2/cadastro/infoCasal.html'
+
+    } else {
+        alert('preencha todos os campos corretamente')
+
+    }
+
+
+})
 
 
 
 nome.addEventListener('keyup', () => {
 
-
-
     if (nome.value.length <= 3) {
 
         nome.setAttribute('style', 'border-color: red')
+        validNome = false
 
     } else {
 
         nome.setAttribute('style', 'border-color: #ccc')
-
+        validNome = true
 
     }
 })
 
 senha.addEventListener('keyup', () => {
 
-
     if (senha.value.length <= 7) {
 
         labelQuant.setAttribute('style', 'color: red')
+        validSenha = false
 
     } else {
 
         labelQuant.setAttribute('style', 'color: black')
-
+        validSenha = true
     }
 })
 
+
+// senha.addEventListener('keyup', () => {
+
+//     if (senha.value != '?') {
+
+//         labelEspecial.setAttribute('style', 'color:red')
+//     } else {
+
+//         labelEspecial.setAttribute('style', 'color: black')
+//     }
+// })
+
 confirmSenha.addEventListener('keyup', () => {
-
-
 
     if (senha.value === confirmSenha.value) {
 
-        confirmSenha.setAttribute('style', 'border-color: grenn')
+        confirmSenha.setAttribute('style', 'border-color: #ccc')
+        validConfimSenha = true
 
     } else {
 
         confirmSenha.setAttribute('style', 'border-color: red')
-
+        validConfimSenha = false
 
     }
 })

@@ -52,7 +52,7 @@ form input[type=email] {
 
 }
 
-form input[type=submit] {
+form button {
 
     background-color: rgb(226, 81, 81);
     width: 30%;
@@ -64,16 +64,9 @@ form input[type=submit] {
 
 }
 
-form input[type=button]:hover {
+form button:hover {
 
     background-color: rgba(236, 113, 113, 0.637);
 
 }
 
-.error-validation {
-
-    color: red;
-    position: absolute;
-    top: 57px;
-    font-size: 10px;
-}
