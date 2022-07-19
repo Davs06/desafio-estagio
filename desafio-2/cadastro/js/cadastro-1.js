@@ -19,7 +19,7 @@ let labelEspecial = document.querySelector('#labelEspecial')
 
 let btn = document.querySelector('#acao').addEventListener('click', (e) => {
 
-    e.preventDefault()
+    //validação de campos vazios
 
     if (validNome && /*validEmail &&*/ validSenha && validConfimSenha) {
 
@@ -34,12 +34,13 @@ let btn = document.querySelector('#acao').addEventListener('click', (e) => {
 
         localStorage.setItem('listData', JSON.stringify(listData))
 
-        // alert('proxima pag')
+
         window.location.href = '///home/davs/workspace/desafio-estagio/desafio-2/cadastro/infoCasal.html'
 
     } else {
         alert('preencha todos os campos corretamente')
 
+        e.preventDefault()
     }
 
 
@@ -62,9 +63,11 @@ nome.addEventListener('keyup', () => {
     }
 })
 
+//validações de senha preenchida corretamente 
+
 senha.addEventListener('keyup', () => {
 
-    if (senha.value.length <= 7) {
+    if (senha.value.length < 8) {
 
         labelQuant.setAttribute('style', 'color: red')
         validSenha = false
@@ -77,16 +80,59 @@ senha.addEventListener('keyup', () => {
 })
 
 
-// senha.addEventListener('keyup', () => {
+senha.addEventListener('keyup', () => {
 
-//     if (senha.value != '?') {
+    if (senha.value.search(/[0-9]/) == -1) {
 
-//         labelEspecial.setAttribute('style', 'color:red')
-//     } else {
+        labelNumb.setAttribute('style', 'color:red')
+        validSenha = false
+    } else {
 
-//         labelEspecial.setAttribute('style', 'color: black')
-//     }
-// })
+        labelNumb.setAttribute('style', 'color: black')
+        validSenha = true
+    }
+})
+
+senha.addEventListener('keyup', () => {
+
+    if (senha.value.search(/[a-z]/) == -1) {
+
+        labelMinusc.setAttribute('style', 'color:red')
+        validSenha = false
+    } else {
+
+        labelMinusc.setAttribute('style', 'color: black')
+        validSenha = true
+    }
+})
+
+senha.addEventListener('keyup', () => {
+
+    if (senha.value.search(/[A-Z]/) == -1) {
+
+        labelMaiusc.setAttribute('style', 'color:red')
+        validSenha = false
+    } else {
+
+        labelMaiusc.setAttribute('style', 'color: black')
+        validSenha = true
+    }
+})
+
+senha.addEventListener('keyup', () => {
+
+    if (senha.value.search(/[?\!\@\#\$\%\^\&\*]/) == -1) {
+
+        labelEspecial.setAttribute('style', 'color:red')
+        validSenha = false
+    } else {
+
+        labelEspecial.setAttribute('style', 'color: black')
+        validSenha = true
+    }
+})
+
+//validação da confirmação de senha 
 
 confirmSenha.addEventListener('keyup', () => {
 
