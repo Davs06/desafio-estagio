@@ -63,6 +63,21 @@ nome.addEventListener('keyup', () => {
     }
 })
 
+
+email.addEventListener('keyup', () =>{
+
+    if(!email.checkValidity()){
+
+        email.setAttribute('style', 'border-color: red')
+
+        validEmail = false
+    }else {
+
+        email.setAttribute('style', 'border-color: #ccc')
+        validEmail = true
+    }
+})
+
 //validações de senha preenchida corretamente 
 
 senha.addEventListener('keyup', () => {
